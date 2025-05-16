@@ -1,0 +1,22 @@
+Ji# STEP 1: Import required libraries
+import pandas as pd
+from google.colab import files
+
+# STEP 2: Upload the CSV file
+print("Please select your CSV file...")
+uploaded = files.upload()
+
+# STEP 3: Read the uploaded CSV file
+filename = list(uploaded.keys())[0]  # Gets the file name from the uploaded files
+df = pd.read_csv(filename)
+
+# STEP 4: Show basic info and top 5 rows
+print("\nData Summary:")
+print(df.info())
+
+print("\nFirst 5 Records:")
+print(df.head())
+
+# STEP 5: Optional – Check for missing data
+print("\nMissing Values per Column:")
+print(df.isnull().sum())
